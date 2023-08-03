@@ -5,13 +5,13 @@
 class ConnectIqManager < Formula
   desc "CLI to download connectIQ resources"
   homepage "https://github.com/lindell/connect-iq-manager"
-  version "0.1.0"
+  version "0.2.0"
   license "Apache-2.0"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/lindell/connect-iq-manager/releases/download/v0.1.0/connect-iq-manager_0.1.0_Darwin_ARM64.tar.gz"
-      sha256 "4259b85398b82c8e644e0fa7dd295db238d5d582ebb4ccd595069d0f7629c846"
+    if Hardware::CPU.intel?
+      url "https://github.com/lindell/connect-iq-manager/releases/download/v0.2.0/connect-iq-manager_0.2.0_Darwin_x86_64.tar.gz"
+      sha256 "9c04066842327debd8475961af0fe06d1bad4b9fc1a5a96ce26da65d3166826d"
 
       def install
         bin.install "connect-iq-manager"
@@ -20,9 +20,9 @@ class ConnectIqManager < Formula
         fish_completion.install "completions/connect-iq-manager.fish"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/lindell/connect-iq-manager/releases/download/v0.1.0/connect-iq-manager_0.1.0_Darwin_x86_64.tar.gz"
-      sha256 "6c92f2ebba1a155bd9df2248c5a90fe4ac802f6107ac43d9ade1d66c0ee9f2ae"
+    if Hardware::CPU.arm?
+      url "https://github.com/lindell/connect-iq-manager/releases/download/v0.2.0/connect-iq-manager_0.2.0_Darwin_ARM64.tar.gz"
+      sha256 "7512b6c9d312f139f6005892aeb5fda4806ab7970b8e316ea315f1d2fc8644f4"
 
       def install
         bin.install "connect-iq-manager"
@@ -34,9 +34,9 @@ class ConnectIqManager < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/lindell/connect-iq-manager/releases/download/v0.1.0/connect-iq-manager_0.1.0_Linux_ARM64.tar.gz"
-      sha256 "4fcbda940b1b372e3b5d95453bbf3d897420de981f4622c7eea8d0eb93d179fe"
+    if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
+      url "https://github.com/lindell/connect-iq-manager/releases/download/v0.2.0/connect-iq-manager_0.2.0_Linux_ARM.tar.gz"
+      sha256 "193144e893e37369278f4880de255550c7ea426f0ded0b83d6470eb975d0de41"
 
       def install
         bin.install "connect-iq-manager"
@@ -46,8 +46,8 @@ class ConnectIqManager < Formula
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/lindell/connect-iq-manager/releases/download/v0.1.0/connect-iq-manager_0.1.0_Linux_x86_64.tar.gz"
-      sha256 "f3a04889c48cca190509ca8a6e0e011fd6563c11b297c46e408d64cff01c1674"
+      url "https://github.com/lindell/connect-iq-manager/releases/download/v0.2.0/connect-iq-manager_0.2.0_Linux_x86_64.tar.gz"
+      sha256 "1540566faf0dfb12e2f478340ab51e5b002cacbb67b75bf1903a15ef59707c16"
 
       def install
         bin.install "connect-iq-manager"
@@ -56,9 +56,9 @@ class ConnectIqManager < Formula
         fish_completion.install "completions/connect-iq-manager.fish"
       end
     end
-    if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/lindell/connect-iq-manager/releases/download/v0.1.0/connect-iq-manager_0.1.0_Linux_ARM.tar.gz"
-      sha256 "f45df44daf8181449a392ac84886a3f848cbf759256553f66617fccda87c601d"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/lindell/connect-iq-manager/releases/download/v0.2.0/connect-iq-manager_0.2.0_Linux_ARM64.tar.gz"
+      sha256 "f8620b7e3c1396d347ffade12e1b335bfb0b0a8970e7c342a811bad131fee671"
 
       def install
         bin.install "connect-iq-manager"
