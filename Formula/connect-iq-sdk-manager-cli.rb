@@ -5,13 +5,13 @@
 class ConnectIqSdkManagerCli < Formula
   desc "CLI to download connectIQ resources"
   homepage "https://github.com/lindell/connect-iq-sdk-manager-cli"
-  version "0.4.0"
+  version "0.5.0"
   license "Apache-2.0"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/lindell/connect-iq-sdk-manager-cli/releases/download/v0.4.0/connect-iq-sdk-manager-cli_0.4.0_Darwin_x86_64.tar.gz"
-      sha256 "7b01d334fb6436d47ba11db0b03467e488efe7f97e4ba9945495f08cf33e6588"
+      url "https://github.com/lindell/connect-iq-sdk-manager-cli/releases/download/v0.5.0/connect-iq-sdk-manager-cli_0.5.0_Darwin_x86_64.tar.gz"
+      sha256 "325c68e4c04c9a40359227c5d370ee739616d43a23411e82ac655ed4b3ff8cf5"
 
       def install
         bin.install "connect-iq-sdk-manager"
@@ -21,8 +21,8 @@ class ConnectIqSdkManagerCli < Formula
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/lindell/connect-iq-sdk-manager-cli/releases/download/v0.4.0/connect-iq-sdk-manager-cli_0.4.0_Darwin_ARM64.tar.gz"
-      sha256 "b824a3875e2c3dc043b8e6f18ff5910cc1acd2716ae77e51f7e43395f05ecc01"
+      url "https://github.com/lindell/connect-iq-sdk-manager-cli/releases/download/v0.5.0/connect-iq-sdk-manager-cli_0.5.0_Darwin_ARM64.tar.gz"
+      sha256 "c7d265062403f3b1e6e04f186ebabce10ab1145a330883fdaf937d5be7c1904e"
 
       def install
         bin.install "connect-iq-sdk-manager"
@@ -34,9 +34,9 @@ class ConnectIqSdkManagerCli < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/lindell/connect-iq-sdk-manager-cli/releases/download/v0.4.0/connect-iq-sdk-manager-cli_0.4.0_Linux_x86_64.tar.gz"
-      sha256 "e8ca4a93af34409b2e900062d8bec4e40f36e5bfbfdb2d4a57526b7d0558fce6"
+    if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
+      url "https://github.com/lindell/connect-iq-sdk-manager-cli/releases/download/v0.5.0/connect-iq-sdk-manager-cli_0.5.0_Linux_ARM.tar.gz"
+      sha256 "a7ff60b4bd41d2fec0d40ca391a9e8aa0751cb3b86277e999f3738ba960840cd"
 
       def install
         bin.install "connect-iq-sdk-manager"
@@ -45,9 +45,9 @@ class ConnectIqSdkManagerCli < Formula
         fish_completion.install "completions/connect-iq-sdk-manager.fish"
       end
     end
-    if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/lindell/connect-iq-sdk-manager-cli/releases/download/v0.4.0/connect-iq-sdk-manager-cli_0.4.0_Linux_ARM.tar.gz"
-      sha256 "5a1763df79beb8c883e154f91244a774534e96877eb7d4dea8a32caee8227fa2"
+    if Hardware::CPU.intel?
+      url "https://github.com/lindell/connect-iq-sdk-manager-cli/releases/download/v0.5.0/connect-iq-sdk-manager-cli_0.5.0_Linux_x86_64.tar.gz"
+      sha256 "1034b3caf7e9e28d7904716e456d30bb790d75d2863704d46d069c5fa26c086d"
 
       def install
         bin.install "connect-iq-sdk-manager"
@@ -57,8 +57,8 @@ class ConnectIqSdkManagerCli < Formula
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/lindell/connect-iq-sdk-manager-cli/releases/download/v0.4.0/connect-iq-sdk-manager-cli_0.4.0_Linux_ARM64.tar.gz"
-      sha256 "1a8b0661288da12b016f96a06948ef7ef40b9a3ef03a4095f142c36cdcafc81c"
+      url "https://github.com/lindell/connect-iq-sdk-manager-cli/releases/download/v0.5.0/connect-iq-sdk-manager-cli_0.5.0_Linux_ARM64.tar.gz"
+      sha256 "4dbb8f828e0a686d88035947c3532e1beac9ff117b7d4a946ad48dce7e9e9216"
 
       def install
         bin.install "connect-iq-sdk-manager"
